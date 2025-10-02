@@ -14,7 +14,7 @@ numeric_features = ['SeniorCitizen','tenure','MonthlyCharges','TotalCharges']
 
 def generate_sample_input():
     if random.random() < 0.4:
-        sample = ['Female', 1, 'No', 'No', random.randint(1,3),'Yes', 'No', 'Fiber optic', 'No', 'No','No', 'No', 'Yes', 'Yes', 'Month-to-month','Yes', 'Electronic check', round(random.uniform(80,120),2),round(random.uniform(80,400),2)]
+        sample = ["Female",1,"No","No",2,"Yes","No","Fiber optic","No","No","No","No","Yes","Yes","Month-to-month","Yes","Electronic check",100,100]
     else:     
         sample = [random.choice(['Male', 'Female']),random.randint(0, 1), random.choice(['Yes','No']),random.choice(['Yes','No']),   random.randint(1, 72),  random.choice(['Yes','No']),         random.choice(['Yes','No','No phone service']),random.choice(['DSL','Fiber optic','No']),  random.choice(['Yes','No','No internet service']),  random.choice(['Yes','No','No internet service']),random.choice(['Yes','No','No internet service']), random.choice(['Yes','No','No internet service']),   random.choice(['Yes','No','No internet service']),random.choice(['Yes','No','No internet service']), random.choice(['Month-to-month','One year','Two year']),  random.choice(['Yes','No']), random.choice(['Electronic check','Mailed check','Bank transfer (automatic)','Credit card (automatic)']),round(random.uniform(20,120),2),round(random.uniform(20,9000),2)]
     return ",".join(map(str, sample))
@@ -53,3 +53,4 @@ if st.button("Predict Churn"):
             st.success(f"Prediction: {'Churn' if pred==1 else 'Not Churn'} (Probability: {prob:.2f})")
     except Exception as e:
         st.error(f"Error: {e}")
+
